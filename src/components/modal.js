@@ -8,7 +8,7 @@ const modal = ({isVisible, actionDeleteItem, itemSelected}) => {
     visible={isVisible} animationType='fade'>
       <View style={styles.modalContainer} >
         <View>
-        <Text style={styles.tituloModal}>Estas Seguro que deseas eliminar larecomendacion ?</Text>
+        <Text style={styles.tituloModal}>Estas Seguro que deseas eliminar la Recomendacion ?</Text>
         <Text style={styles.modalTextStyle}>{itemSelected.name} </Text>
         <Pressable style={styles.ButtonDelete}  onPress={()=> actionDeleteItem()}>
         <Text style={styles.textDelete}>Eliminar</Text>
