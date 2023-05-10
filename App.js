@@ -1,65 +1,26 @@
 
-import { Button, FlatList, Text, TextInput, View } from 'react-native';
-import { useState } from 'react';
-import Modal from './src/components/modal'
+import {Text, View } from 'react-native';
 import styles from './Styles';
+import { useFonts } from 'expo-font';
+import Login from './src/components/Login/login';
+
 
 export default function App() {
 
-  const [texItem, setTexItem] = useState("")
-  const [list, setList] = useState([])
-  const [itemSelected, setItemSelected] = useState({});
-  const [modalVisible, setModalVisible] = useState(false);
+ const [loaded]= useFonts({
+    "Ubuntu-Regular":require("./assets/fonts/Ubuntu-Regular.ttf"),
+    "Ubuntu-Bold":require("./assets/fonts/Ubuntu-Bold.ttf"),
+  });
 
-  const onHandleChangeText = (text) => {
-    setTexItem(text)
-  }
+  let content = <Login/>
   
-  const addItem = () => {
-    setList(prevState => [...prevState,{name:texItem,id:Math.random().toString(),},
-    ]);
-    setTexItem("")
-  };
 
-  const onHandleModal = item => {
-    setItemSelected(item);
-    setModalVisible(!modalVisible);
-  }
-
-  const onHandleDelete = item => {
-    console.log("delete item",item)
-    setList(prevState => prevState.filter(element => element.name !== item.name));
-    setModalVisible(!modalVisible);
-  };
-
-
-  const renderItem = ({item}) => (
-    <View style={styles.renderItemStyle}>
-      <Text>{item.name}</Text>
-      <Button title="X"
-      onPress={()=> onHandleModal(item)}/>
-    </View>
-  );
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Text style={styles.titleContainer}>RECOPELIS</Text>
-        <Text style={styles.subtituleContainer}>Recomendame una serie o pelicula !!</Text>
-        <View style={styles.addItemContainer}>
-        <TextInput placeholder='TITULO SERIE / PELICULA' style={styles.input} onChangeText={onHandleChangeText}value={texItem}/>
-        <Button onPress={addItem} title='Recomendar'/>
-        </View>
+        {content}
       </View>
-      <View style={styles.listContainer}>
-        <FlatList
-        data={list}
-        renderItem={renderItem}
-        KeyExtractor={item => item.id}/>
-        </View>
-      
-      <Modal  isVisible={modalVisible} 
-              actionDeleteItem={() => onHandleDelete(itemSelected)} 
-              itemSelected={itemSelected}/>
     </View>
     
   )

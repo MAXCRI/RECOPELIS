@@ -1,10 +1,11 @@
-import { StyleSheet,Text, View, Modal as NewModal, Pressable} from 'react-native'
+import { Text, View, Modal as NewModal, Pressable} from 'react-native'
 import React from 'react'
-import styles from "./styles"
+import styles from "./styles.js"
+
 const modal = ({isVisible, actionDeleteItem, itemSelected}) => {
   return (
     
-    <NewModal
+    <NewModal style={styles.fonfoContainer}
     visible={isVisible} animationType='fade'>
       <View style={styles.modalContainer} >
         <View>

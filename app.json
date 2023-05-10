@@ -1,4 +1,6 @@
+
 {
+  
   "expo": {
     "name": "Recopelis",
     "slug": "Recopelis",
@@ -9,7 +11,6 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain", 
-      "trasparencie":"true",
       "backgroundColor": "#CBC5D6"
     },
     "assetBundlePatterns": [

@@ -1,11 +1,16 @@
 import { StyleSheet } from "react-native"
+import colorPalet from "../constants/colorPalet";
 
 const styles = StyleSheet.create({
     modalContainer: {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor:"#CBC5D6",
+      backgroundColor:colorPalet.fondo,
+    },
+    
+    fonfoContainer:{
+      backgroundColor:colorPalet.fondo,
     },
   
     tituloModal:{
@@ -34,6 +39,7 @@ const styles = StyleSheet.create({
       fontSize: 30,
       justifyContent: "center",
       alignItems: "center",
+      backgroundColor:colorPalet.fondo,
     },
   
   });
