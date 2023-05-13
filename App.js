@@ -1,28 +1,38 @@
-
-import {Text, View } from 'react-native';
-import styles from './Styles';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import ListContainer from './src/components/ListContainer/ListContainer';
+import Login from './src/components/Login/Login';
 import { useFonts } from 'expo-font';
-import Login from './src/components/Login/login';
+import styles from './Styles';
 
 
-export default function App() {
+function App() {
 
- const [loaded]= useFonts({
-    "Ubuntu-Regular":require("./assets/fonts/Ubuntu-Regular.ttf"),
-    "Ubuntu-Bold":require("./assets/fonts/Ubuntu-Bold.ttf"),
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [loaded]= useFonts({
+    UbuntuRegular:require("./src/assets/fonts/Ubuntu-Regular.ttf"),
+    UbuntuBold:require("./src/assets/fonts/Ubuntu-Bold.ttf"),
+
   });
 
-  let content = <Login/>
-  
+  if (!loaded) return null
+
+  function renderScreen() {
+    if (isLoggedIn) {
+      return <ListContainer />;
+    } else {
+      return <Login setIsLoggedIn={setIsLoggedIn} />;
+    }
+  }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <Text style={styles.titleContainer}>RECOPELIS</Text>
-        {content}
-      </View>
-    </View>
     
-  )
-};
+    <View style={styles.container}>
+      <Text style={styles.titleContainer}>RECOPELIS </Text>
+      {renderScreen()}
+    </View>
+  );
+}
 
+export default App

@@ -1,42 +1,26 @@
+import { Text, B, View, TextInput, Button } from 'react-native';
+import styles from './Styles'
 
-import { Button, FlatList, Text, TextInput, View } from 'react-native';
-import { useState } from 'react';
-import styles from './Styles';
-import { useFonts } from 'expo-font';
-import ListContainer from './src/components/ListContainer/listContainer'
-
-export default function login() {
-
- const [loaded]= useFonts({
-    "Ubuntu-Regular":require("./assets/fonts/Ubuntu-Regular.ttf"),
-    "Ubuntu-Bold":require("./assets/fonts/Ubuntu-Bold.ttf"),
-  });
-
- 
-  const onHandleChangescreen = () => {
-    setTexItem()
-  }
-  
-  let content = <ListContainer />
-  
-
-  return (
+const Login = (props) => {
+    function HandleLogin(){
+            props.setIsLoggedIn(true);
+        }
+return(
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <Text style={styles.titleContainer}>RECOPELIS</Text>
-        <Text style={styles.subtituleContainer}>ingresa tu usuario y contraseñá!!</Text>
-        <View style={styles.addItemContainer}>
-        <TextInput placeholder='CORREO O USUARIO' style={styles.input} onChangeText={onHandleChangeText}value={texItem}/>
-        <View>
+            <TextInput
+              placeholder="USUARIO"
+              style={styles.inputUser}
+            />
+            <TextInput
+              placeholder="CONTRASEÑÁ"
+              style={styles.inputContra}
+            />
+        <View style={styles.button}> 
+        < Button title="Iniciar Session " color="red" onPress={HandleLogin}/>
+        </View>
         
-        </View>
-       
-        </View>
-      </View>
-      <Button title='INGRESAR  '/>
-      <Button title='Olvide Mi contraseña'/>
     </View>
-    
-  )
-};
+    );
+    }
 
+export default Login;
