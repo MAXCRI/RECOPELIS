@@ -1,4 +1,4 @@
-import { Text, B, View, TextInput, Button } from 'react-native';
+import { View, TextInput, Button } from 'react-native';
 import styles from './Styles'
 
 const Login = (props) => {
@@ -16,7 +16,7 @@ return(
               style={styles.inputContra}
             />
         <View style={styles.button}> 
-        < Button title="Iniciar Session " color="red" onPress={HandleLogin}/>
+        < Button title="Iniciar Sesion " color="red" onPress={HandleLogin}/>
         </View>
         
     </View>

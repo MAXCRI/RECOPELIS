@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import ListContainer from './src/components/ListContainer/ListContainer';
 import Login from './src/components/Login/Login';
 import { useFonts } from 'expo-font';
