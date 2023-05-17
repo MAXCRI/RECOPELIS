@@ -1,7 +1,8 @@
 import { View, TextInput, Button } from 'react-native';
 import styles from './Styles'
 
-const Login = (props) => {
+
+const Login = ({navigation}) => {
     function HandleLogin(){
             props.setIsLoggedIn(true);
         }
@@ -16,7 +17,7 @@ return(
               style={styles.inputContra}
             />
         <View style={styles.button}> 
-        < Button title="Iniciar Sesion " color="red" onPress={HandleLogin}/>
+        < Button title="Iniciar Sesion " color="red" onPress={() => navigation.navigate("Recomendaciones")}/>
         </View>
         
     </View>

@@ -4,6 +4,9 @@ import ListContainer from './src/components/ListContainer/ListContainer';
 import Login from './src/components/Login/Login';
 import { useFonts } from 'expo-font';
 import styles from './Styles';
+import navigation from './src/navigation/ScreenNavigator'
+import ScreenNavigator from './src/navigation/ScreenNavigator';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 function App() {
@@ -18,6 +21,8 @@ function App() {
 
   if (!loaded) return null
 
+// Dejo el renderizado condicional para futuro agregar un login que funcione realmente
+/*
   function renderScreen() {
     if (isLoggedIn) {
       return <ListContainer />;
@@ -25,13 +30,22 @@ function App() {
       return <Login setIsLoggedIn={setIsLoggedIn} />;
     }
   }
-
-  return (
-    
+  {renderScreen()} 
+*/
+ 
+/* 
+    <SafeAreaView style={{flex:1,}}>
+    <ScreenNavigator/>
+    </SafeAreaView>
+    */
+    return (
     <View style={styles.container}>
+      
       <Text style={styles.titleContainer}>RECOPELIS </Text>
-      {renderScreen()}
+      <ScreenNavigator/>
+      
     </View>
+    
   );
 }
 
