@@ -1,11 +1,12 @@
 import {Button,FlatList,Text,TextInput,View,} from "react-native";
 import { useState } from "react";
+import Modal from "../../components/DeleteItemList/Modal";
 import React from "react";
-import Modal from '../DeleteItemList/Modal';
+
 import styles from './Styles';
 
   
-  function ListContainer() {
+  function Recomendar() {
     const [textItem, setTextItem] = useState("");
     const [list, setList] = useState([]);
     const [itemSelected, setItemSelected] = useState({});
@@ -76,5 +77,5 @@ import styles from './Styles';
     );
   }
   
-  export default ListContainer;
+  export default Recomendar;
 

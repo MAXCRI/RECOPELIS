@@ -17,7 +17,7 @@ return(
               style={styles.inputContra}
             />
         <View style={styles.button}> 
-        < Button title="Iniciar Sesion " color="red" onPress={() => navigation.navigate("Recomendaciones")}/>
+        < Button title="Iniciar Sesion " color="red" onPress={() => navigation.navigate("TabNavigator")}/>
         </View>
         
     </View>
