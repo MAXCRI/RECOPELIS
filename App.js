@@ -3,6 +3,8 @@ import { View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import styles from './Styles';
 import ScreenNavigator from './src/navigation/ScreenNavigator';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 
 
@@ -36,13 +38,12 @@ function App() {
     </SafeAreaView>
     */
     return (
+    <Provider store={store}>
     <View style={styles.container}>
-      
       <Text style={styles.titleContainer}>RECOPELIS </Text>
       <ScreenNavigator/>
-      
     </View>
-    
+    </Provider>
   );
 }
 

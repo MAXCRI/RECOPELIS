@@ -2,9 +2,9 @@ import { Text, View } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ListRecomendados from "../Screen/ListRecomendados/ListRecomendados";
 import Recomendar from "../Screen/RecomendarContainer/Recomendar";
 import styles from "../../Styles";
+import RecoNavigator from "./RecoNavigator";
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -18,8 +18,8 @@ export default BottomTabNavigator = () => {
       }}
     >
       <BottomTabs.Screen
-        name="ListRecomendados"
-        component={ListRecomendados}
+        name="ShopNavigator"
+        component={RecoNavigator}
         options={{
           tabBarIcon: () => (
             <View>

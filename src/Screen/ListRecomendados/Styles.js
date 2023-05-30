@@ -65,6 +65,16 @@ const styles = StyleSheet.create({
     shadowRadius:2,
     elevation:3,
   },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+  categoriesContainer: {
+    padding: 15,
+    height: 150,
+  },
 });
 
 
